@@ -44,18 +44,36 @@ document.addEventListener('DOMContentLoaded', () => {
       centeredSlides: true,     
       spaceBetween: 200,
       loop: true,    
-      autoplay: {
-        delay: 4500,
-        disableOnInteraction: false,
-      },
+      // autoplay: {
+      //   delay: 4500,
+      //   disableOnInteraction: false,
+      // },
       cardsEffect: {
         rotate: 0,
-        slideShadows: true,     
-        // stretch: 50,
+        slideShadows: true,   
+        stretch: 60,
       },
       pagination: {
         el: ".section-slider .swiper-pagination",
       },
+      
+        // effect: "coverflow",
+        // grabCursor: true,
+        // centeredSlides: true,        
+        // speed: 1200,
+        // initialSlide: 1,
+        // loop: true,
+        // coverflowEffect: {
+        //   rotate: 0,
+        //   stretch: 0,
+        //   depth: 120,
+        //   modifier: 3,
+        //   slideShadows: false,
+        // },
+        // pagination: {
+        //   el: ".section-slider .swiper-pagination",
+        //   clickable: true
+        // }        
     });  
   })();
   
@@ -214,7 +232,52 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     return false;
   });
-  
+
+
+  // бургер-меню
+  function toggleBurgerMenu() {
+    if (document.querySelector('.header-nav ul') && document.querySelector('.burger-btn span')) {
+      document.querySelector('.mobile-menu').classList.toggle('active');
+      document.querySelector('.burger-btn span').classList.toggle('active');
+      document.querySelector('.header').classList.toggle('header-menu');  
+
+      document.body.style.overflow =  document.querySelector('.mobile-menu.active') ? 'hidden' : '';       
+    }  
+  };
+
+  (function() {
+    if(!document.querySelector('.burger-btn') || !document.querySelector('.header-nav ul')) return
+
+    const menuBtn = document.querySelector('.burger-btn');
+    const menu = document.querySelector('.mobile-menu');
+
+    menuBtn.addEventListener('click', toggleBurgerMenu);    
+  })();
+
+ 
+  // клонирование и вставки навигации для мобильного отображаения
+  (function() {
+    if(!document.querySelector('.header-nav ul') || !document.querySelector('.mobile-menu .mobile-nav')) return
+
+    const ul = document.querySelector('.header-nav ul');
+    const mobileMenu = document.querySelector('.mobile-menu .mobile-nav');
+    
+    const clonedUl = ul.cloneNode(true);
+    
+    mobileMenu.appendChild(clonedUl);
+  })();
+
+  // открытие подменю mobile
+  (function() {
+    const items = document.querySelectorAll('.mobile-nav li');   
+
+    items.forEach(el => {      
+      el.addEventListener('click', () => {
+        console.log('click');
+        el.classList.toggle('opened');
+      })
+    })
+  })();
   
   // (function () {
   //   if (!document.querySelector('.header-nav ul li:nth-child(1) a') || !document.querySelector('.appointment')) return
