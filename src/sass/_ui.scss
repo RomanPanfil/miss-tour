@@ -1,0 +1,279 @@
+p {
+	margin: $paragraph_margin;
+}
+ul, ol {
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+}
+li {
+	list-style: none;
+}
+a {
+	color: $font;
+}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6, .h20 {
+	font-family: $basefont;
+	font-weight: $headings_font_weight;
+	// color: $headings_color;
+	margin: $headings_margin;
+	text-transform: $headings_text_transform;
+	line-height: 1.2;	
+}
+
+h1, .h1 {
+	@include fz($h1);
+	margin-top: 0;
+	line-height: 1.15;	
+}
+h2, .h2, .ui-h2 {
+	@include fz($h2);
+	line-height: 1.2;	
+}
+h3, .h3, .ui-h3 {
+	@include fz($h3);
+	line-height: 1.2;	
+}
+h4, .h4, .ui-h4 {
+	@include fz($h4);
+}
+h5, .h5 {
+	@include fz($h5);
+}
+h6, .h6, .ui-h5 {
+	@include fz($h6);
+	text-transform: none;
+	font-weight: 700;
+}
+.ui-font-midi {
+	@include fz(16);
+}
+.ui-font-mini {
+	@include fz(14);
+}
+.h20 {
+	@include fz(20);
+}
+.ui-strong,
+.ui-bold {
+	font-weight: 700;
+}
+.ui-demi {
+	font-weight: 600;
+}
+
+
+a {	
+	text-decoration: none;
+	outline: none;
+	transition: color .3s, border .3s;
+}
+b, strong {
+	font-weight: 700;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.wrapper a img {
+	border: none;
+	display: block;
+	line-height: 0;
+	font-size: 0;
+}
+/*---- ICONS ---- */
+
+::selection {
+	background: $title;
+	color: #FFF;
+}
+::-moz-selection {
+	background: $bgc;
+	color: #FFF;	
+}
+@media (min-width: 992px) {
+	::-webkit-scrollbar {
+		width: 4px;
+		height: 4px;		
+	}
+	::-webkit-scrollbar-thumb {
+		width: 4px;
+		height: 4px;
+		background-color: $form;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: lighten($form, 8%);
+	}
+}
+  
+.circle {
+	&-icon {
+	  position: relative;
+	  width: p2r(36);
+	  height: p2r(36);
+	  border-radius: 50%;
+	  border: 1px solid $icon_border;
+  
+	  svg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: p2r(18);
+		height: p2r(18);
+	  }    
+	}
+  }
+
+.call-socials {
+    display: inline-block;
+    vertical-align: middle;
+    width: p2r(24);
+    height: p2r(24);
+
+    &-wats {
+      width: p2r(20);
+      height: p2r(20); 
+    }
+
+    &-telegram {
+      width: p2r(22);
+      height: p2r(22);  
+    }
+
+    &:not(:last-child) {
+      margin-right: p2r(1);
+    }
+}
+
+.page-title {
+	width: max-content;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	color: $title;	
+	text-align: center;
+	font-family: $philosopher;
+	@include fz(64);	
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+	padding-left: 36px;
+	padding-right: 36px;
+	margin-top: 40px;
+	margin-bottom: 106px;
+
+	&-back {
+		position: absolute;
+		color: $primary;
+		font-family: $basefont;
+		@include fz(16);		
+		font-weight: 400;
+		line-height: 150%;
+		text-decoration-line: underline;
+		display: inline-block;
+		text-transform: none;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: -31px;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $hover;
+		}
+	}
+
+	&::before {
+		position: absolute;
+		top: 50%;
+		right: 100%;
+		transform: translateY(-50%);
+		content: '';
+		background-image: url(../images/title-img.svg);
+		width: 190px;
+		height: 6px;
+		display: block;
+	}
+
+	&::after {
+		position: absolute;
+		top: 50%;
+		left: 100%;
+		transform: translateY(-50%);
+		content: '';
+		background-image: url(../images/title-img.svg);
+		width: 190px;
+		height: 6px;
+		display: block;
+	}
+}
+
+.section-title {
+	color: $title;
+	@include fz(48);
+	font-family: $philosopher;	
+	font-weight: 700;	
+	text-transform: uppercase;
+	user-select: none;
+	margin-bottom: p2r(62);
+	text-align: center;
+
+	&__left {
+		text-align: left;
+	}
+}
+
+.ui-field {	
+	label.error {
+		color: $error;
+		@include fz(12);		
+		width: max-content;		
+	}
+}
+
+.ui-input {
+	border: 1px solid #fff;
+	color: #fff;
+	background: transparent;
+	padding: p2r(18);
+	outline: none;
+	border-radius: p2r(6);
+	width: 100%;
+
+	&::placeholder {
+		color: #EAF5FF;		
+	}
+}
+
+.ui-textarea {
+	border: 1px solid #fff;
+	color: #fff;
+	background: transparent;
+	padding: p2r(18);
+	outline: none;
+	border-radius: p2r(6);
+	width: 100%;
+	height: 104px;
+	resize: none;
+
+	&::placeholder {
+		color: #EAF5FF;		
+	}
+}
+
+.ui-btn {
+	border: none;
+	color: #fff;
+	outline: none;	
+	background-color: $primary;
+	padding: p2r(18) p2r(37);
+	border-radius: p2r(36);
+	cursor: pointer;
+	transition: background-color 0.3s;
+
+	&:hover {
+		background-color: $hover;
+	}
+}
