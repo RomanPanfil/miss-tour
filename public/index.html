@@ -150,18 +150,27 @@
           <div class="swiper main-slider">
             <div class="swiper-wrapper">
               <div class="swiper-slide main-slider-slide">
-                <div class="main-slider-card">
-                  <img src="./images/slider-1.jpg" alt="slider">
+                <div class="main-slider-card">                  
+                  <picture>
+                    <source srcset="./images/slider-1.jpg" media="(min-width: 769px)">
+                    <img src="./images/slider-1-mobile.jpg" alt="slider" loading="lazy" class="main-slide-bg" />
+                  </picture>
                 </div>
               </div>
               <div class="swiper-slide main-slider-slide">
-                <div class="main-slider-card">
-                  <img src="./images/slider-1.jpg" alt="slider">
+                <div class="main-slider-card">                 
+                  <picture>
+                    <source srcset="./images/slider-1.jpg" media="(min-width: 769px)">
+                    <img src="./images/slider-1-mobile.jpg" alt="slider" loading="lazy" class="main-slide-bg" />
+                  </picture>
                 </div>
               </div>
               <div class="swiper-slide main-slider-slide">
-                <div class="main-slider-card">
-                  <img src="./images/slider-1.jpg" alt="slider">
+                <div class="main-slider-card">                  
+                  <picture>
+                    <source srcset="./images/slider-1.jpg" media="(min-width: 769px)">
+                    <img src="./images/slider-1-mobile.jpg" alt="slider" loading="lazy" class="main-slide-bg" />
+                  </picture>
                 </div>
               </div>
               <!-- <div class="swiper-pagination"></div> -->
@@ -373,10 +382,13 @@
 
       <section class="section-destinations section-destinations__background">
         <div class="container">
-          <div class="section-title">
+          <div class="section-title section-title__desktop">
             наши направления
           </div>
-          <div class="slider-container">
+          <div class="section-title section-title__mobile">
+            направления
+          </div>
+          <div class="slider-container slider-container__half">
             <div class="swiper slider-wrapper destinations-slider">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -599,12 +611,12 @@
           <nav class="footer-nav">
             <ul>
               <li>
-                <a href="#">
+                <a href="javascript:void(0)">
                   О нас
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="javascript:void(0)">
                   Туры
                 </a>
                 <svg class="icon Arrow-down">
@@ -612,29 +624,29 @@
                 </svg>
                 <ul>
                   <li>
-                    <a href="#">
+                    <a href="javascript:void(0)">
                       Авиатуры
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="javascript:void(0)">
                       Автобусные туры
                     </a>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="#">
+                <a href="javascript:void(0)">
                   Направления
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="javascript:void(0)">
                   Страхование
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="javascript:void(0)">
                   Контакты
                 </a>
               </li>

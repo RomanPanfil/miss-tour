@@ -35,13 +35,13 @@ body {
   line-height: $lh;
   background: #FFF; 
 
-  @media (max-width: 1259px) {
-    @include fz(16);
-  }
+  // @media (max-width: 1259px) {
+  //   @include fz(16);
+  // }
 
-  @media (max-width: 599px) {
-    @include fz(14);
-  }  
+  // @media (max-width: 599px) {
+  //   @include fz(14);
+  // }  
 }
 
 input::-ms-clear {

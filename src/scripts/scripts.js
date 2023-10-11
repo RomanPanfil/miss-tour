@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     var swiper = new Swiper('.destinations-slider', {   
       grabCursor: true,    
-      slidesPerView: 5,
+      slidesPerView: 1.2,
       slidesPerGroup: 1,
       spaceBetween: 20,
       autoHeight: true,
@@ -95,6 +95,20 @@ document.addEventListener('DOMContentLoaded', () => {
         nextEl: ".section-destinations .slider-next",
         prevEl: ".section-destinations .slider-prew",
       },
+      breakpoints: {
+        600: {
+          slidesPerView: 2,
+        },
+        769: {
+          slidesPerView: 3,
+        },
+        1140: {
+          slidesPerView: 4, 
+        },
+        1680: {
+          slidesPerView: 5,
+        }
+      }
     });  
   })();
   
@@ -103,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     var swiper = new Swiper('.tour-slider', {   
       grabCursor: true,    
-      slidesPerView: 4,
+      slidesPerView: 1,
       slidesPerGroup: 1,
       spaceBetween: 20,
       autoplay: false,
@@ -115,6 +129,19 @@ document.addEventListener('DOMContentLoaded', () => {
         nextEl: ".section-tours .slider-next",
         prevEl: ".section-tours .slider-prew",
       },
+      breakpoints: {      
+        769: {
+          slidesPerView: 2,   
+          spaceBetween: 20,   
+        },       
+        1140: {
+          slidesPerView: 3,          
+        },
+        1680: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        }
+      }
     });  
   })();
 
@@ -272,8 +299,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.mobile-nav li');   
 
     items.forEach(el => {      
-      el.addEventListener('click', () => {
-        console.log('click');
+      el.addEventListener('click', () => {        
+        el.classList.toggle('opened');
+      })
+    })
+  })();
+
+  (function() {
+    const items = document.querySelectorAll('.footer-nav li');   
+
+    items.forEach(el => {      
+      el.addEventListener('click', () => {        
         el.classList.toggle('opened');
       })
     })
