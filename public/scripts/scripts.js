@@ -41,8 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
       grabCursor: true,
       initialSlide: 1,
       slidesPerView: 1,
-      centeredSlides: true,     
+      centeredSlides: false,     
       spaceBetween: 200,
+      threshold: 10,
       loop: true,    
       // autoplay: {
       //   delay: 4500,
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // },
       cardsEffect: {
         rotate: 0,
-        slideShadows: true,   
+        slideShadows: true,       
         stretch: 60,
       },
       pagination: {
@@ -63,18 +64,19 @@ document.addEventListener('DOMContentLoaded', () => {
         // centeredSlides: true,        
         // speed: 1200,
         // initialSlide: 1,
+        // slidesPerView: 'auto',
         // loop: true,
         // coverflowEffect: {
         //   rotate: 0,
         //   stretch: 0,
-        //   depth: 120,
+        //   depth: 110,
         //   modifier: 3,
-        //   slideShadows: false,
+        //   slideShadows: false,                 
         // },
         // pagination: {
         //   el: ".section-slider .swiper-pagination",
         //   clickable: true
-        // }        
+        // }
     });  
   })();
   
@@ -328,6 +330,21 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
   })();
+
+  // обертка для таблицы
+  (function(){
+    if (!document.querySelector('article table')) return
+
+    let tables = document.querySelectorAll('article table');
+
+    tables.forEach((table) => {
+        let wrapper = document.createElement('div');
+        wrapper.classList.add('section-article-table', 'section-article-table__full');
+
+        table.parentNode.insertBefore(wrapper, table);
+        wrapper.appendChild(table);
+    })
+})();
   
   // (function () {
   //   if (!document.querySelector('.header-nav ul li:nth-child(1) a') || !document.querySelector('.appointment')) return

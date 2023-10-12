@@ -557,6 +557,14 @@
       &:not(.swiper-slide-active) {
         filter: blur(1px);
       }
+
+      // &.swiper-slide-prev {
+      //   transform: translateX(90%) translateX(-60px) scale(0.8) !important;
+      // }
+
+      // &.swiper-slide-next {
+      //   transform: translateX(-90%) translateX(60px) scale(0.8) !important;       
+      // }
     }
 
     &-card {
