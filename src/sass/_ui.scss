@@ -128,15 +128,15 @@ img {
 			height: 32px;
 		}
 
-		@media (max-width: 1280px) {
-			width: 26px;
-			height: 26px;
-		}
+		// @media (max-width: 1280px) {
+		// 	width: 26px;
+		// 	height: 26px;
+		// }
 
-		@media (max-width: 1140px) {
-			width: 24px;
-			height: 24px;
-		}
+		// @media (max-width: 1140px) {
+		// 	width: 24px;
+		// 	height: 24px;
+		// }
 
 		@media (max-width: 960px) {
 			width: 36px;
@@ -162,15 +162,15 @@ img {
 				height: 14px;
 			}
 
-			@media (max-width: 1280px) {
-				width: 12px;
-				height: 12px;
-			}
+			// @media (max-width: 1280px) {
+			// 	width: 12px;
+			// 	height: 12px;
+			// }
 
-			@media (max-width: 1140px) {
-				width: 10px;
-				height: 10px;
-			}
+			// @media (max-width: 1140px) {
+			// 	width: 10px;
+			// 	height: 10px;
+			// }
 
 			@media (max-width: 960px) {
 				width: 18px;
@@ -351,6 +351,15 @@ img {
 		transition: color 0.3s;
 		white-space: nowrap;
 
+		@media (max-width: 768px) {
+			bottom: -26px;
+		}
+
+		@media (max-width: 420px) {
+			@include fz(14);
+			bottom: -22px;
+		}
+
 		&:hover {
 			color: $hover;
 		}
@@ -473,10 +482,18 @@ img {
 	border: 1px solid #fff;
 	color: #fff;
 	background: transparent;
-	padding: p2r(18);
+	padding: 18px;
 	outline: none;
-	border-radius: p2r(6);
+	border-radius: 6px;
 	width: 100%;
+
+	@media (max-width: 960px) {		
+		@include fz(14);
+	}
+
+	@media (max-width: 768px) {		
+		@include fz(16);
+	}
 
 	&-wrapper {
 		position: relative;

@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
       grabCursor: true,    
       slidesPerView: 1,
       slidesPerGroup: 1,
-      spaceBetween: 20,
+      spaceBetween: 12,
       autoplay: false,
       // loop: true,     
       pagination: {
@@ -137,13 +137,18 @@ document.addEventListener('DOMContentLoaded', () => {
         nextEl: ".section-tours .slider-next",
         prevEl: ".section-tours .slider-prew",
       },
-      breakpoints: {          
+      breakpoints: {             
         576: {
           slidesPerView: 2,   
-          spaceBetween: 20,   
-        },       
+          spaceBetween: 14,   
+        },
+        960: {
+          slidesPerView: 2,        
+          spaceBetween: 18,   
+        },      
         1024: {
-          slidesPerView: 3,          
+          slidesPerView: 3,
+          spaceBetween: 20,       
         },
         1680: {
           slidesPerView: 4,
