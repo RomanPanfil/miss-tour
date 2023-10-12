@@ -758,6 +758,10 @@
   &-title {
     margin-bottom: 34px;
 
+    @media (max-width: 1140px) {
+      margin-bottom: 24px;
+    }
+
     @media (max-width: 599px) {
       margin-bottom: 20px;
     }
@@ -765,6 +769,14 @@
 
   &-text {
     line-height: 150%;
+
+    @media (max-width: 1140px) {
+      @include fz(14);
+    }
+
+    @media (max-width: 768px) {
+      @include fz(16);
+    }
   }
 
   &-more {
@@ -850,8 +862,12 @@
 }
 .destinations {  
 
-  &-card {    
-    border-radius: p2r(8);
+  &-card {   
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    overflow: hidden; 
     background: #FFF;    
     // box-shadow: 0px 11px 24px 0px rgba(187, 202, 216, 0.10), 0px 43px 43px 0px rgba(187, 202, 216, 0.09), 0px 97px 58px 0px rgba(187, 202, 216, 0.05), 0px 172px 69px 0px rgba(187, 202, 216, 0.01), 0px 269px 75px 0px rgba(187, 202, 216, 0.00);
     // box-shadow: 0px 11px 24px 0px rgba(187, 202, 216, 0.07),
@@ -881,8 +897,6 @@
         height: 100%;
         object-fit: cover;
         object-position: center;
-        border-top-left-radius: p2r(4);
-        border-top-right-radius: p2r(4);
         transition: transform 0.3s;
       }
     }
@@ -937,6 +951,27 @@
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 40px;
+
+    @media (max-width: 1360px) {
+      width: 25%;
+      flex: 0 0 25%;
+    }
+
+    @media (max-width: 1024px) {
+      width: 33.33%;
+      flex: 0 0 33.33%;
+    }
+
+    @media (max-width: 768px) {
+      width: 50%;
+      flex: 0 0 50%;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 480px) {
+      width: 100%;
+      flex: 0 0 100%;
+    }
   }
 }
 
@@ -1044,7 +1079,7 @@
     display: flex;
     position: relative;
 
-    @media (max-width: 960px) {
+    @media (max-width: 768px) {
       flex-direction: column;
     }
 
@@ -1073,6 +1108,11 @@
     }
 
     @media (max-width: 960px) {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
       width: 100%;
       flex: 0 0 100%;
     }
@@ -1088,7 +1128,7 @@
       top: 18px;
       left: calc(100% - 1px);
       
-      @media (max-width: 960px) {               
+      @media (max-width: 768px) {               
         height: 2px;
         width: calc(100% - 16px);
         background-image: linear-gradient(to right, #fff 60%, transparent 50%);
@@ -1126,6 +1166,10 @@
     @media (max-width: 960px) {
       width: 100%;
       flex: 0 0 100%;
+      padding: 29px 52px 40px 52px;
+    }
+
+    @media (max-width: 768px) {     
       padding: 39px 52px 50px 52px;
     }
 
@@ -1156,12 +1200,17 @@
     left: 50%;
     transform: translateX(-50%);
 
+    @media (max-width: 1366px) {
+      width: 80%;
+    }
+
     @media (max-width: 1140px) {
       padding: 18px 30px;
     }
 
     @media (max-width: 960px) {
-      padding: 22px 35px
+      padding: 22px 35px;
+      width: 85%;
     }
 
     &-icon {
@@ -1195,9 +1244,9 @@
         @include fz(16);
       }
 
-      @media (max-width: 960px) {
+      @media (max-width: 768px) {
         @include fz(20);
-      }
+      }      
     }
 
     &-author {      
@@ -1213,7 +1262,7 @@
     transform: translateX(-50%);        
     bottom: 0;
 
-    @media (max-width: 960px) {
+    @media (max-width: 768px) {
       position: static;
       transform: unset;
       display: block;
@@ -1288,7 +1337,11 @@
     background-color: #fff;
     border-radius: 8px;
     background: #FFF;
-    box-shadow: 0px 11px 24px 0px rgba(187, 202, 216, 0.10), 0px 43px 43px 0px rgba(187, 202, 216, 0.09), 0px 97px 58px 0px rgba(187, 202, 216, 0.05), 0px 172px 69px 0px rgba(187, 202, 216, 0.01), 0px 269px 75px 0px rgba(187, 202, 216, 0.00);
+    box-shadow: 0px 11px 24px 0px rgba(187, 202, 216, 0.10),
+                0px 43px 43px 0px rgba(187, 202, 216, 0.09),
+                0px 97px 58px 0px rgba(187, 202, 216, 0.05),
+                0px 172px 69px 0px rgba(187, 202, 216, 0.01),
+                0px 269px 75px 0px rgba(187, 202, 216, 0.00);
     padding-top: 74px;
     padding-bottom: 74px;
     padding-left: 180px;
@@ -1312,16 +1365,19 @@
     }
 
     @media (max-width: 960px) {
-      padding-top: 46px;
-      padding-bottom: 46px;
-      padding-left: 90px;
-      padding-right: 90px;
+      padding: 40px;
       margin-bottom: 80px;
     }
 
     @media (max-width: 768px) {
       padding: 32px;
-      margin-bottom: 60px;     
+      margin-bottom: 60px;
+      box-shadow: 0px 0px 24px 2px rgba(187, 202, 216, 0.10),
+                  0px 0px 43px 4px rgba(187, 202, 216, 0.09),
+                  0px 0px 58px 4px rgba(187, 202, 216, 0.05),
+                  0px 0px 69px 4px rgba(187, 202, 216, 0.01),
+                  0px 0px 75px 10px rgba(187, 202, 216, 0.00);
+  
     }
 
     @media (max-width: 420px) {
@@ -1380,13 +1436,23 @@
   &-table {
     overflow-x: auto;
     &__full {
+      @media (max-width: 420px) {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+
       table {
         width: 100%;
+        table-layout: fixed;  
       }
     }
     table {
       margin-top: 32px;    
       border-collapse: collapse;
+
+      @media (max-width: 599px) {
+        @include fz(14);
+      }
     }    
   }
 
@@ -1398,13 +1464,14 @@
 
   td {
     padding: 13px 19px;
-    max-width: 200px;
+
+    width: 320px;   
     
     &:nth-child(2) {
       white-space: nowrap;
     }
-    &:nth-child(1), &:nth-child(2) {
-      width: 30%;
+    &:nth-child(1), &:nth-child(2) {      
+      width: 240px;
     }
   }
 
@@ -1483,8 +1550,8 @@
     }
 
     @media (max-width: 960px) {
-      margin-left: -90px;
-      margin-right: -90px;     
+      margin-left: -40px;
+      margin-right: -40px;     
     }
 
     @media (max-width: 768px) {
@@ -1506,12 +1573,25 @@
 // contacts
 .contacts {
   display: flex;
+  flex-wrap: wrap;
   margin-left: -20px;
   margin-right: -20px;
-  margin-bottom: 56px;
+  margin-bottom: 24px;
 
   &-map-wrapper {
     margin-bottom: 60px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: 599px) {
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 420px) {
+      margin-bottom: 30px;
+    }
   }
 
   &-item {
@@ -1521,9 +1601,44 @@
     gap: 7px;
     width: 25%;
     flex: 0 0 25%;
+    margin-bottom: 32px;
+
+    @media (max-width: 1280px) {
+      margin-bottom: 22px;
+    }
+
+    @media (max-width: 960px) {
+      width: 50%;
+      flex: 0 0 50%;      
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      flex: 0 0 100%;
+    }
   }
 
-  &-text {    
+  &-text {
+    @media (max-width: 1500px) {
+      @include fz(14);
+    }
+
+    @media (max-width: 1366px) {
+      @include fz(13);
+    }
+
+    @media (max-width: 1280px) {
+      @include fz(11)
+    }
+
+    @media (max-width: 1140px) {
+      @include fz(10)
+    }
+
+    @media (max-width: 960px) {
+      @include fz(16)
+    }
+
     &:first-child {
       padding-top: 6px;
     }
@@ -1531,7 +1646,27 @@
     &__prompt {
       color: $font_light;
       font-family: $noto-sans;
-      @include fz(14);           
+      @include fz(14);
+      
+      @media (max-width: 1500px) {
+        @include fz(13);
+      }
+  
+      @media (max-width: 1366px) {
+        @include fz(12);
+      }
+  
+      @media (max-width: 1280px) {
+        @include fz(10)
+      }
+  
+      @media (max-width: 1140px) {
+        @include fz(9)
+      }
+
+      @media (max-width: 960px) {
+        @include fz(14)
+      }
     }
 
     &-phone {
@@ -1626,8 +1761,21 @@
 
   &-map {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 30px);
     margin-bottom: 30px;
+
+    @media (max-width: 1280px) {
+      aspect-ratio: 5/2;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      aspect-ratio: 4/3;
+    }
+
+    @media (max-width: 480px) {
+      aspect-ratio: 1/1;
+    }
   }
 }
 

@@ -116,6 +116,7 @@ img {
 		height: 36px;
 		border-radius: 50%;
 		border: 1px solid $icon_border;
+		flex-shrink: 0;
 
 		@media (max-width: 1500px) {
 			width: 34px;
@@ -302,14 +303,22 @@ img {
 	margin-top: 40px;
 	margin-bottom: 106px;
 
+	@media (max-width: 1280px) {		
+		margin-bottom: 80px;
+	}
+
 	@media (max-width: 1024px) {
-		@include fz(58);
+		@include fz(52);
 		margin-top: 36px;
 		margin-bottom: 60px;
 	}
-	
-	@media (max-width: 768px) {
-		@include fz(52);
+
+	@media (max-width: 960px) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	@media (max-width: 768px) {		
 		margin-top: 30px;
 		margin-bottom: 42px;
 	}
@@ -339,7 +348,8 @@ img {
 		left: 50%;
 		transform: translateX(-50%);
 		bottom: -31px;
-		transition: color 0.3s;		
+		transition: color 0.3s;
+		white-space: nowrap;
 
 		&:hover {
 			color: $hover;
@@ -407,6 +417,11 @@ img {
 		margin-bottom: 54px;		
 	}
 
+	@media (max-width: 960px) {
+		@include fz(36);
+		margin-bottom: 54px;		
+	}
+
 	@media (max-width: 599px) {
 		@include fz(32);
 		margin-bottom: 24px;
@@ -421,15 +436,40 @@ img {
 	}
 }
 
-.ui-field {	
+.ui-field {
+	position: relative;
+	
+
 	label.error {
 		color: $error;
 		@include fz(12);		
 		width: max-content;		
 	}
+
+	span {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 20px;	
+		cursor: text;
+		@include fz(14);		
+	}
+
+	input:invalid + span::before {
+		content: attr(placeholder);
+		position: relative;		
+		color: #EAF5FF;		
+		
+	}
+	  
+	input:invalid + span::after {
+		content: '*';
+		// position: relative;				
+		color: $primary;
+	}
 }
 
-.ui-input {
+.ui-input {	
 	border: 1px solid #fff;
 	color: #fff;
 	background: transparent;
@@ -438,8 +478,12 @@ img {
 	border-radius: p2r(6);
 	width: 100%;
 
+	&-wrapper {
+		position: relative;
+	}
+
 	&::placeholder {
-		color: #EAF5FF;		
+		color: #EAF5FF;	
 	}
 }
 

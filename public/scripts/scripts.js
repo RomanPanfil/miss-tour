@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       pagination: {
         el: ".section-slider .swiper-pagination",
+        clickable: true
       },
       
         // effect: "coverflow",
@@ -90,13 +91,17 @@ document.addEventListener('DOMContentLoaded', () => {
       // loop: true,
       pagination: {
         el: ".section-destinations .swiper-pagination",
+        clickable: true
       },
       navigation: {
         nextEl: ".section-destinations .slider-next",
         prevEl: ".section-destinations .slider-prew",
       },
       breakpoints: {
-        600: {
+        480: {
+          slidesPerView: 1.6,
+        },
+        577: {
           slidesPerView: 2,
         },
         769: {
@@ -124,17 +129,18 @@ document.addEventListener('DOMContentLoaded', () => {
       // loop: true,     
       pagination: {
         el: ".section-tours .swiper-pagination",
+        clickable: true
       },
       navigation: {
         nextEl: ".section-tours .slider-next",
         prevEl: ".section-tours .slider-prew",
       },
-      breakpoints: {      
-        769: {
+      breakpoints: {          
+        576: {
           slidesPerView: 2,   
           spaceBetween: 20,   
         },       
-        1140: {
+        1024: {
           slidesPerView: 3,          
         },
         1680: {
@@ -155,6 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // loop: true,     
       pagination: {
         el: ".article-slider .swiper-pagination",
+        clickable: true
       },
       navigation: {
         nextEl: ".article-slider .slider-next",
@@ -266,7 +273,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.header-nav ul') && document.querySelector('.burger-btn span')) {
       document.querySelector('.mobile-menu').classList.toggle('active');
       document.querySelector('.burger-btn span').classList.toggle('active');
-      document.querySelector('.header').classList.toggle('header-menu');  
+
+      if(document.querySelector('.header').classList.contains('header-menu')) {
+        setTimeout(() => {
+          document.querySelector('.header').classList.remove('header-menu');
+        }, 300)
+      } else {
+        document.querySelector('.header').classList.add('header-menu');
+      }       
 
       document.body.style.overflow =  document.querySelector('.mobile-menu.active') ? 'hidden' : '';       
     }  

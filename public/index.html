@@ -348,7 +348,7 @@
       <section class="section-resume">
         <div class="container">
           <div class="row valign-end">
-            <div class="col-lg-7 col-md-12">
+            <div class="col-sm-7 col-us-12">
               <div class="resume-info">
                 
                   <div class="section-title section-title__left resume-title">
@@ -371,7 +371,7 @@
                                 
               </div>              
             </div>
-            <div class="col-lg-5 col-md-12">
+            <div class="col-sm-5 col-us-12">
               <div class="resume-image">
                 <img src="./images/suitcase.png" alt="suitcase">
               </div>
@@ -543,7 +543,7 @@
                   <div class="feedback-col-field">
                     <label for="name" class="feedback-label-title">Имя</label>
                     <div class="ui-field">
-                      <input type="text" placeholder="Введите имя" required name="name" id="name" class="ui-input">
+                      <input type="text" placeholder="Введите имя" name="name" id="name" class="ui-input">
                     </div>
                   </div>
                   <div class="feedback-col-field">
@@ -579,8 +579,7 @@
               form.reset()
             },
             rules: {
-              name: {
-                required: true,
+              name: {                
                 noDigits: true
               },
               number: {
@@ -589,8 +588,7 @@
               },
             },
             messages: {
-              name: {
-                required: "Пожалуйста, заполните это поле",
+              name: {               
                 noDigits: "В этом поле нельзя вводить цифры"
               },
               number: 'Пожалуйста, заполните это поле',
@@ -604,7 +602,7 @@
     <!-- main screen end -->
 
 
-
+    <!-- footer start -->
     <footer class="footer">
       <div class="container">
         <div class="footer-top">
@@ -742,7 +740,9 @@
         </div>
       </div>
     </footer>
-    <!-- mobile menu -->
+    <!-- footer end -->
+
+    <!-- mobile menu start -->
     <div class="mobile-menu">
       <div class="container">
         <div class="mobile-nav">          
@@ -813,6 +813,7 @@
         </div>                    
       </div>
     </div>
+    <!-- mobile menu end -->
   </div>
 
 

@@ -346,7 +346,7 @@
                       <div class="feedback-col-field">
                         <label for="name" class="feedback-label-title">Имя</label>
                         <div class="ui-field">
-                          <input type="text" placeholder="Введите имя" required name="name" id="name" class="ui-input">
+                          <input type="text" placeholder="Введите имя" name="name" id="name" class="ui-input">
                         </div>
                       </div>
                       <div class="feedback-col-field">
@@ -382,8 +382,7 @@
                   form.reset()
                 },
                 rules: {
-                  name: {
-                    required: true,
+                  name: {                   
                     noDigits: true
                   },
                   number: {
@@ -392,8 +391,7 @@
                   },
                 },
                 messages: {
-                  name: {
-                    required: "Пожалуйста, заполните это поле",
+                  name: {                   
                     noDigits: "В этом поле нельзя вводить цифры"
                   },
                   number: 'Пожалуйста, заполните это поле',

@@ -38,6 +38,11 @@
       <div class="container">
         <div class="header-wrapper">
           <nav class="header-nav">
+            <button class="burger-btn">
+              <div class="burger-btn-icon">
+                <span></span>
+              </div>
+            </button>
             <ul>
               <li>
                 <a href="#">
@@ -85,7 +90,7 @@
             <img src="./images/svg/logo.svg" alt="logo">            
           </a>
           <div class="header-contacts">
-            <div class="header-contacts-item">
+            <div class="header-contacts-item header-contacts-item__desktop">
               <div class="circle-icon">
                 <svg>
                   <use xlink:href="svg/svg/symbols.svg#marker" />
@@ -97,7 +102,7 @@
                 </div>
               </div>              
             </div>
-            <div class="header-contacts-item">             
+            <div class="header-contacts-item header-contacts-item__desktop">             
               <div class="circle-icon">
                 <svg>
                   <use xlink:href="svg/svg/symbols.svg#phone" />
@@ -124,6 +129,13 @@
                   </a>
                 </div>
               </div>
+            </div>
+            <div class="header-contacts-item header-contacts-item__mobile">
+              <a href="tel:+375447150859" class="circle-icon circle-icon__mobile">
+                <svg>
+                  <use xlink:href="svg/svg/symbols.svg#phone" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -242,18 +254,19 @@
     </main>
     <!-- main screen end -->
 
+    <!-- footer start -->
     <footer class="footer">
       <div class="container">
         <div class="footer-top">
           <nav class="footer-nav">
             <ul>
               <li>
-                <a href="#">
+                <a href="javascript:void(0)">
                   О нас
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="javascript:void(0)">
                   Туры
                 </a>
                 <svg class="icon Arrow-down">
@@ -261,29 +274,29 @@
                 </svg>
                 <ul>
                   <li>
-                    <a href="#">
+                    <a href="javascript:void(0)">
                       Авиатуры
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="javascript:void(0)">
                       Автобусные туры
                     </a>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="#">
+                <a href="javascript:void(0)">
                   Направления
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="javascript:void(0)">
                   Страхование
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="javascript:void(0)">
                   Контакты
                 </a>
               </li>
@@ -379,7 +392,80 @@
         </div>
       </div>
     </footer>
-    <!-- second screen end -->
+    <!-- footer end -->
+
+    <!-- mobile menu start -->
+    <div class="mobile-menu">
+      <div class="container">
+        <div class="mobile-nav">          
+        </div>      
+        <div class="mobile-contacts">
+          <div class="mobile-contacts-item">
+            <div class="circle-icon">
+              <svg>
+                <use xlink:href="svg/svg/symbols.svg#marker" />
+              </svg>
+            </div>
+            <div class="mobile-contacts-info">
+              <div class="mobile-contacts-text">
+                г. Гомель, ул. Жарковского, 22
+              </div>
+            </div>              
+          </div>
+          <div class="mobile-contacts-item">             
+            <div class="circle-icon">
+              <svg>
+                <use xlink:href="svg/svg/symbols.svg#phone" />
+              </svg>
+            </div>
+            <div class="mobile-contacts-info">
+              <div class="mobile-contacts-text">
+                <a href="tel:+375447150859" class="mobile-phone-num">
+                  +375(44)715-08-59
+                </a>
+                <svg class="call-socials call-socials-viber">
+                  <use xlink:href="svg/svg/symbols.svg#viber" />
+                </svg>
+                <svg class="call-socials call-socials-wats">
+                  <use xlink:href="svg/svg/symbols.svg#watsApp" />
+                </svg>
+                <svg class="call-socials call-socials-telegram">
+                  <use xlink:href="svg/svg/symbols.svg#telegram" />
+                </svg>
+              </div>
+              <div class="mobile-contacts-text">
+                <a href="tel:+375447150859">
+                  +375(44)715-08-59
+                </a>
+              </div>
+            </div>
+          </div>            
+        </div>        
+        <div class="socials">
+          <a href="#" target="_blank" class="socials-link">
+            <svg class="socials-icon">
+              <use xlink:href="svg/svg/symbols.svg#vk" />
+            </svg>
+          </a>
+          <a href="#" target="_blank" class="socials-link">
+            <svg class="socials-icon">
+              <use xlink:href="svg/svg/symbols.svg#fb" />
+            </svg>
+          </a>            
+          <a href="#" target="_blank" class="socials-link">
+            <svg class="socials-icon">
+              <use xlink:href="svg/svg/symbols.svg#inst" />
+            </svg>
+          </a>
+          <a href="#" target="_blank" class="socials-link">
+            <svg class="socials-icon">
+              <use xlink:href="svg/svg/symbols.svg#tik" />
+            </svg>
+          </a>            
+        </div>                    
+      </div>
+    </div>
+    <!-- mobile menu end -->
   </div>
 
 
