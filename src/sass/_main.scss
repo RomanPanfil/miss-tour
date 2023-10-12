@@ -579,7 +579,11 @@
       padding-right: 0;
     }
     &-slide {
-      border-radius: p2r(16);
+      border-radius: 16px;
+
+      @media (max-width: 768px) {
+        border-radius: 0;
+      }
 
       &:not(.swiper-slide-active) {
         filter: blur(1px);

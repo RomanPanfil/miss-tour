@@ -2774,7 +2774,12 @@ img {
   }
 }
 .main-slider-slide {
-  border-radius: 1rem;
+  border-radius: 16px;
+}
+@media (max-width: 768px) {
+  .main-slider-slide {
+    border-radius: 0;
+  }
 }
 .main-slider-slide:not(.swiper-slide-active) {
   -webkit-filter: blur(1px);

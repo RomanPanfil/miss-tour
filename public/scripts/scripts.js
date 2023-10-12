@@ -37,47 +37,49 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!document.querySelector('.main-slider')) return
   
     var swiper = new Swiper('.main-slider', {
-      // effect: 'cards',
-      // grabCursor: true,
-      // initialSlide: 1,
-      // slidesPerView: 'auto',
-      // centeredSlides: false,     
-      // spaceBetween: 200,
-      // threshold: 10,
-      // loop: true,      
-      // // autoplay: {
-      // //   delay: 4500,
-      // //   disableOnInteraction: false,
-      // // },
-      // cardsEffect: {
-      //   rotate: 0,
-      //   slideShadows: true,       
-      //   stretch: 60,
+      effect: 'cards',
+      grabCursor: true,
+      initialSlide: 1,
+      slidesPerView: 'auto',
+      centeredSlides: false,     
+      spaceBetween: 200,
+      threshold: 10,
+      loop: true,      
+      loopedSlides: 2,
+      // autoplay: {
+      //   delay: 4500,
+      //   disableOnInteraction: false,
       // },
-      // pagination: {
-      //   el: ".section-slider .swiper-pagination",
-      //   clickable: true
-      // },
+      cardsEffect: {
+        rotate: 0,
+        slideShadows: true,       
+        stretch: 60,
+      },
+      pagination: {
+        el: ".section-slider .swiper-pagination",
+        clickable: true
+      },
       
-        effect: "coverflow",
-        grabCursor: true,
-        centeredSlides: true,        
-        speed: 1200,
-        // initialSlide: 1,
-        slidesPerView: 'auto',
-        loop: true,
-        coverflowEffect: {
-          rotate: 0,
-          stretch: 0,
-          depth: 200,
-          modifier: 1,
-          slideShadows: false,
-        },
-        pagination: {
-          el: ".section-slider .swiper-pagination",
-          clickable: true
-        }
-    });  
+      
+        // effect: "coverflow",
+        // grabCursor: true,
+        // centeredSlides: true,        
+        // speed: 1200,
+        // // initialSlide: 1,
+        // slidesPerView: 'auto',
+        // loop: true,
+        // coverflowEffect: {
+        //   rotate: 0,
+        //   stretch: 0,
+        //   depth: 200,
+        //   modifier: 1,
+        //   slideShadows: false,
+        // },
+        // pagination: {
+        //   el: ".section-slider .swiper-pagination",
+        //   clickable: true
+        // }
+    });        
   })();
   
   (function() {
@@ -349,7 +351,16 @@ document.addEventListener('DOMContentLoaded', () => {
         table.parentNode.insertBefore(wrapper, table);
         wrapper.appendChild(table);
     })
-})();
+  })();
+
+  // new Vue({
+  //   el: '#app',    
+  //   components: {
+  //     'carousel-3d': window['carousel-3d'].Carousel3d,
+  //     'slide': window['carousel-3d'].Slide
+  //   }    
+  // })
+
   
   // (function () {
   //   if (!document.querySelector('.header-nav ul li:nth-child(1) a') || !document.querySelector('.appointment')) return
