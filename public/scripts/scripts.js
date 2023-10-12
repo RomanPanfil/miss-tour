@@ -37,46 +37,46 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!document.querySelector('.main-slider')) return
   
     var swiper = new Swiper('.main-slider', {
-      effect: 'cards',
-      grabCursor: true,
-      initialSlide: 1,
-      slidesPerView: 1,
-      centeredSlides: false,     
-      spaceBetween: 200,
-      threshold: 10,
-      loop: true,    
-      // autoplay: {
-      //   delay: 4500,
-      //   disableOnInteraction: false,
+      // effect: 'cards',
+      // grabCursor: true,
+      // initialSlide: 1,
+      // slidesPerView: 'auto',
+      // centeredSlides: false,     
+      // spaceBetween: 200,
+      // threshold: 10,
+      // loop: true,      
+      // // autoplay: {
+      // //   delay: 4500,
+      // //   disableOnInteraction: false,
+      // // },
+      // cardsEffect: {
+      //   rotate: 0,
+      //   slideShadows: true,       
+      //   stretch: 60,
       // },
-      cardsEffect: {
-        rotate: 0,
-        slideShadows: true,       
-        stretch: 60,
-      },
-      pagination: {
-        el: ".section-slider .swiper-pagination",
-        clickable: true
-      },
+      // pagination: {
+      //   el: ".section-slider .swiper-pagination",
+      //   clickable: true
+      // },
       
-        // effect: "coverflow",
-        // grabCursor: true,
-        // centeredSlides: true,        
-        // speed: 1200,
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,        
+        speed: 1200,
         // initialSlide: 1,
-        // slidesPerView: 'auto',
-        // loop: true,
-        // coverflowEffect: {
-        //   rotate: 0,
-        //   stretch: 0,
-        //   depth: 110,
-        //   modifier: 3,
-        //   slideShadows: false,                 
-        // },
-        // pagination: {
-        //   el: ".section-slider .swiper-pagination",
-        //   clickable: true
-        // }
+        slidesPerView: 'auto',
+        loop: true,
+        coverflowEffect: {
+          rotate: 0,
+          stretch: 0,
+          depth: 200,
+          modifier: 1,
+          slideShadows: false,
+        },
+        pagination: {
+          el: ".section-slider .swiper-pagination",
+          clickable: true
+        }
     });  
   })();
   

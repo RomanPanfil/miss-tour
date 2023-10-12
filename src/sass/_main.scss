@@ -11,9 +11,9 @@
     top: 0;
     left: 50%;
     transform: translate(-50%, -45%);
-    width: 100vw;
+    width: 101vw;
     height: 100vw;
-    max-width: 1920px;
+    max-width: 1930px;
     max-height: 1920px;
     border-radius: 50%;
     background: linear-gradient(90deg, rgba(29,114,193,0.0760679271708683) 0%, rgba(246,251,255,0.7903536414565826) 53%, rgba(29,114,193,0.12648809523809523) 90%);
@@ -49,10 +49,11 @@
     flex-wrap: wrap;
     justify-content: flex-end;    
     padding-top: 12px;
+    gap: 12px;
 
     @media (max-width: 1500px) {
       width: calc(50% - 180px / 2);
-      padding-left: 50px;
+      padding-left: 40px;
     }
 
     @media (max-width: 1366px) {
@@ -63,9 +64,9 @@
     @media (max-width: 1280px) {
       // width: calc(50% - 145px / 2);
       // padding-left: 28px;
-      width: max-content;
-      flex-direction: column;
-      row-gap: 8px;
+      // width: max-content;
+      // flex-direction: column;
+      // row-gap: 8px;
     }
 
     @media (max-width: 1140px) {
@@ -85,26 +86,14 @@
       gap: 6px;
 
       &__desktop {
-        @media (max-width: 960px) {
+        @media (max-width: 1024px) {
           display: none;
-        }
-
-        &:not(:nth-child(2)) {
-          margin-right: 12px;
-  
-          @media (max-width: 1280px) {
-            margin-right: 8px;
-          }
-  
-          @media (max-width: 1140px) {
-            margin-right: 6px;
-          }
-        }
+        }        
       }
 
       &__mobile {
         display: none;
-        @media (max-width: 960px) {
+        @media (max-width: 1024px) {
           display: block;
           position: relative;
           // z-index: 12;
@@ -125,23 +114,37 @@
     }
 
     &-text {  
-      white-space: nowrap;
+      // white-space: nowrap;
 
-      @media (max-width: 1500px) {
+      // @media (max-width: 1500px) {
+      //   @include fz(14);
+      // }
+
+      // @media (max-width: 1366px) {
+      //   @include fz(13);
+      // }
+
+      @media (max-width: 1280px) {
         @include fz(14);
       }
 
-      @media (max-width: 1366px) {
-        @include fz(13);
+      @media (max-width: 1140px) {
+        @include fz(13)
       }
 
-      // @media (max-width: 1280px) {
-      //   @include fz(11)
-      // }
+      &__address {
+        @media (max-width: 1500px) {
+          max-width: 140px;
+        }
 
-      // @media (max-width: 1140px) {
-      //   @include fz(10)
-      // }
+        @media (max-width: 1280px) {
+          max-width: 120px;
+        }
+
+        @media (max-width: 1140px) {
+          max-width: unset;
+        }
+      }
       
       &:first-child {
         padding-top: 6px;
@@ -182,17 +185,19 @@
       width: 22px;
       height: 22px;
     }
-    @media (max-width: 960px) {
+    @media (max-width: 1024px) {
       position: relative;
       display: flex;
       z-index: 1;
       order: 1;
-    }
-    @media (max-width: 960px) {
       width: 46px;
       height: 46px;
-      // z-index: 12;
     }
+    // @media (max-width: 960px) {
+    //   width: 46px;
+    //   height: 46px;
+    //   // z-index: 12;
+    // }
   
     span {
       display: block;
@@ -250,7 +255,7 @@
 
     @media (max-width: 1500px) {
       width: calc(50% - 180px / 2);
-      padding-right: 50px;
+      padding-right: 40px;
     }
 
     @media (max-width: 1366px) {
@@ -290,14 +295,14 @@
       // margin-top: 12px;
       // margin-bottom: 12px;
 
-      order: -1;
+      // order: -1;
     }
 
-    // @media (max-width: 1140px) {
-    //   width: 120px;      
-    // }
+    @media (max-width: 1140px) {
+      width: 140px;
+    }
 
-    @media (max-width: 960px) {
+    @media (max-width: 1024px) {
       order: unset;
       width: 224px;
       position: relative;
@@ -335,7 +340,7 @@
     display: flex;   
     justify-content: space-between;
 
-    @media (max-width: 960px) {     
+    @media (max-width: 1024px) {     
       display: none;         
     }
 
@@ -402,21 +407,21 @@
         display: inline-block;
         // vertical-align: middle;
 
-        @media (max-width: 1500px) {
-          @include fz(14);
-        }
-
-        @media (max-width: 1366px) {
-          @include fz(13);
-        }
-
-        // @media (max-width: 1280px) {
-        //   @include fz(11)
+        // @media (max-width: 1500px) {
+        //   @include fz(14);
         // }
 
-        // @media (max-width: 1140px) {
-        //   @include fz(10)
+        // @media (max-width: 1366px) {
+        //   @include fz(13);
         // }
+
+        @media (max-width: 1280px) {
+          @include fz(14)
+        }
+
+        @media (max-width: 1140px) {
+          @include fz(13)
+        }
       }
       
       & > ul {
@@ -555,14 +560,23 @@
   flex-grow: 1;
 
   &-slider {
-    // padding-left: 60px;
-    // padding-right: 60px;
-    // margin-left: -60px;
-    // margin-right: -60px;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-left: -60px;
+    margin-right: -60px;
+
+    @media (max-width: 768px) {
+      margin-left: -35px;
+      margin-right: -35px;
+      padding-left: 0;
+      padding-right: 0;
+    }
 
     @media (max-width: 599px) {
       margin-left: -20px;
       margin-right: -20px;
+      padding-left: 0;
+      padding-right: 0;
     }
     &-slide {
       border-radius: p2r(16);
@@ -589,10 +603,11 @@
         border-radius: 16px;
         
         @media (max-width: 768px) {
-          width: auto;
+          width: 100%;
           height: 100%;
           object-fit: cover;
           object-position: center;
+          border-radius: 0;
         }
       }
     }
@@ -1814,6 +1829,18 @@ article {
   margin-right: auto;
   padding: 55px;
   text-align: center;
+
+  @media (max-width: 599px) {
+    padding: 45px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 35px;
+  }
+
+  @media (max-width: 360px) {
+    padding: 25px;
+  }
 }
 
 .success {
@@ -1837,7 +1864,7 @@ article {
       height: 1px;
       background: #D8E5F1;
       left: 50%;
-      top: 44px;
+      bottom: -20px;
       transform: translateX(-50%);
     }
   }
@@ -1856,6 +1883,12 @@ button.mfp-close {
   color: #fff !important;
   @include fz(0);
   transition: background 0.3s;
+
+  @media (max-width: 599px) {
+    transform: unset;
+    right: 12px;
+    top: 12px;
+  }
 
   &:hover {
     background: $hover;
@@ -1901,6 +1934,10 @@ button.mfp-close {
     & > ul {
       display: flex;   
       justify-content: space-between;
+
+      @media (max-width: 960px) {
+        justify-content: space-around;
+      }
 
       @media (max-width: 768px) {       
         flex-direction: column;
@@ -1974,20 +2011,29 @@ button.mfp-close {
           transition: color 0.3s;
           display: inline-block;
           // vertical-align: middle;
-          @media (max-width: 1500px) {
-            @include fz(14);
-          }
+
+          // @media (max-width: 1500px) {
+          //   @include fz(14);
+          // }
   
-          @media (max-width: 1366px) {
-            @include fz(13);
-          }
+          // @media (max-width: 1366px) {
+          //   @include fz(13);
+          // }
   
+          // @media (max-width: 1280px) {
+          //   @include fz(11);
+          // }
+  
+          // @media (max-width: 1140px) {
+          //   @include fz(10);
+          // }
+
           @media (max-width: 1280px) {
-            @include fz(11);
+            @include fz(14)
           }
   
           @media (max-width: 1140px) {
-            @include fz(10);
+            @include fz(13)
           }
 
           @media (max-width: 960px) {
@@ -2095,6 +2141,7 @@ button.mfp-close {
     flex-wrap: wrap;
     justify-content: flex-end;
     padding-top: 34px;
+    gap: 12px;
 
     @media (max-width: 1500px) {
       width: calc(50% - 180px / 2);
@@ -2109,9 +2156,9 @@ button.mfp-close {
     @media (max-width: 1280px) {
       // width: calc(50% - 145px / 2);
       // padding-left: 28px;
-      width: max-content;
-      flex-direction: column;
-      row-gap: 8px;
+      // width: max-content;
+      // flex-direction: column;
+      // row-gap: 8px;
     }
 
     // @media (max-width: 1140px) {
@@ -2144,32 +2191,54 @@ button.mfp-close {
       display: flex;
       gap: 6px;
 
-      &:not(:last-child) {
-        margin-right: 12px;
-      }
+      // &:not(:last-child) {
+      //   margin-right: 12px;
+      // }
     }
 
     &-text {  
-      white-space: nowrap;
+      // white-space: nowrap;
 
-      @media (max-width: 1500px) {
+      // @media (max-width: 1500px) {
+      //   @include fz(14);
+      // }
+
+      // @media (max-width: 1366px) {
+      //   @include fz(13);
+      // }
+
+      // @media (max-width: 1280px) {
+      //   @include fz(11)
+      // }
+
+      // @media (max-width: 1140px) {
+      //   @include fz(10)
+      // }
+
+      @media (max-width: 1280px) {
         @include fz(14);
       }
 
-      @media (max-width: 1366px) {
-        @include fz(13);
-      }
-
-      @media (max-width: 1280px) {
-        @include fz(11)
-      }
-
       @media (max-width: 1140px) {
-        @include fz(10)
+        @include fz(13)
       }
 
       @media (max-width: 960px) {
         @include fz(16)
+      }
+
+      &__address {
+        @media (max-width: 1500px) {
+          max-width: 140px;
+        }
+
+        @media (max-width: 1280px) {
+          max-width: 120px;
+        }
+
+        @media (max-width: 1140px) {
+          max-width: unset;
+        }
       }
 
       &:first-child {
@@ -2241,7 +2310,7 @@ button.mfp-close {
       // width: 145px;
       // margin-top: 12px;
       // margin-bottom: 12px;
-      order: -1;
+      // order: -1;
     }
 
     // @media (max-width: 1140px) {
@@ -2407,9 +2476,9 @@ button.mfp-close {
     margin-bottom: 10px;
     line-height: 120%;
 
-    @media (max-width: 1366px) {
-      @include fz(10);
-    }
+    // @media (max-width: 1366px) {
+    //   @include fz(10);
+    // }
 
     @media (max-width: 599px) {
       padding-top: 78px;
@@ -2439,9 +2508,9 @@ button.mfp-close {
       @include fz(14);
     }
 
-    @media (max-width: 1280px) {
-      @include fz(12);
-    }    
+    // @media (max-width: 1280px) {
+    //   @include fz(12);
+    // }    
 
     @media (max-width: 599px) {
       @include fz(16);
@@ -2481,9 +2550,9 @@ button.mfp-close {
         @include fz(14);
       }
 
-      @media (max-width: 1280px) {
-        @include fz(12);
-      }
+      // @media (max-width: 1280px) {
+      //   @include fz(12);
+      // }
 
       @media (max-width: 599px) {
         @include fz(16);
@@ -2506,10 +2575,10 @@ button.mfp-close {
         height: 35px;
       }
 
-      @media (max-width: 1280px) {
-        width: 20px;
-        height: 32px
-      }
+      // @media (max-width: 1280px) {
+      //   width: 20px;
+      //   height: 32px
+      // }
 
       @media (max-width: 960px) {
         width: 25px;
