@@ -268,15 +268,15 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   // открытие подменю mobile
-  document.querySelectorAll('.mobile-nav li').forEach(el => {      
-    el.addEventListener('click', () => {        
-      el.classList.toggle('opened');
+  document.querySelectorAll('.mobile-nav li .icon').forEach(el => {
+    el.addEventListener('click', () => {
+      el.parentNode.classList.toggle('opened');
     })
   });
 
-  document.querySelectorAll('.footer-nav li').forEach(el => {      
+  document.querySelectorAll('.footer-nav li .icon').forEach(el => {      
     el.addEventListener('click', () => {        
-      el.classList.toggle('opened');
+      el.parentNode.classList.toggle('opened');
     })
   });
 
