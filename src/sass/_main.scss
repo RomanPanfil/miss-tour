@@ -141,9 +141,9 @@
           max-width: 120px;
         }
 
-        @media (max-width: 1140px) {
-          max-width: unset;
-        }
+        // @media (max-width: 1140px) {
+        //   max-width: unset;
+        // }
       }
       
       &:first-child {
@@ -159,6 +159,12 @@
         &:hover {
           color: $hover;
         }
+      }
+    }
+
+    @media (max-width: 1140px) {
+      .call-socials {
+        display: none;
       }
     }
   }
@@ -849,6 +855,12 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    @media (max-width: 768px) {
+      img {
+        width: 340px;
+      }
     }
   }
 }
@@ -2236,12 +2248,8 @@ button.mfp-close {
           max-width: 140px;
         }
 
-        @media (max-width: 1280px) {
+        @media (max-width: 1280px) and (min-width: 960px) {
           max-width: 120px;
-        }
-
-        @media (max-width: 1140px) {
-          max-width: unset;
         }
       }
 
@@ -2254,6 +2262,12 @@ button.mfp-close {
         &:hover {
           color: $hover;
         }
+      }
+    }
+
+    @media (max-width: 1140px) and (min-width: 960px) {
+      .call-socials {
+        display: none;
       }
     }
   }
@@ -2743,5 +2757,66 @@ button.mfp-close {
     transform: translate(-50%, -50%);
     width: 20px;
     height: 20px;
+  }
+}
+
+
+.vslider-slide {
+  background: #000;
+  overflow: hidden;
+  border-radius: 25px;
+
+  img {
+    display: block;
+  }
+
+  @media (max-width: 599px) {
+    border-radius: 16px;
+  }
+}
+#vslider {
+  margin-left: -50px;
+  margin-right: -50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  overflow: hidden;
+
+  .carousel-3d-container {
+    overflow: visible;
+  }
+  .carousel-3d-slide {
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 1024px) {
+  .tour-slider {
+    margin-right: -40px;
+    padding-right: 40px;
+    .swiper-slide {
+      width: 340px;
+      max-width: calc(100vw - 40px);
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .tour-slider {
+    margin-right: -35px;
+    padding-right: 35px;
+  }
+}
+
+@media (max-width: 576px) {
+  .tour-slider {
+    margin-right: -30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 420px) {
+  .tour-slider {
+    margin-right: -20px;
+    padding-right: 20px;
   }
 }

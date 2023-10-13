@@ -2321,11 +2321,6 @@ img {
     max-width: 120px;
   }
 }
-@media (max-width: 1140px) {
-  .header-contacts-text__address {
-    max-width: unset;
-  }
-}
 .header-contacts-text:first-child {
   padding-top: 6px;
 }
@@ -2341,6 +2336,11 @@ img {
 }
 .header-contacts-text a:hover {
   color: #DA3C5A;
+}
+@media (max-width: 1140px) {
+  .header-contacts .call-socials {
+    display: none;
+  }
 }
 .header .burger-btn {
   width: 48px;
@@ -3027,6 +3027,11 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+@media (max-width: 768px) {
+  .resume-image img {
+    width: 340px;
+  }
 }
 
 .section-destinations {
@@ -4512,14 +4517,9 @@ button.mfp-close::after {
     max-width: 140px;
   }
 }
-@media (max-width: 1280px) {
+@media (max-width: 1280px) and (min-width: 960px) {
   .footer-contacts-text__address {
     max-width: 120px;
-  }
-}
-@media (max-width: 1140px) {
-  .footer-contacts-text__address {
-    max-width: unset;
   }
 }
 .footer-contacts-text:first-child {
@@ -4532,6 +4532,11 @@ button.mfp-close::after {
 }
 .footer-contacts-text a:hover {
   color: #DA3C5A;
+}
+@media (max-width: 1140px) and (min-width: 960px) {
+  .footer-contacts .call-socials {
+    display: none;
+  }
 }
 .footer-nav {
   width: calc(50% - 195px / 2);
@@ -5051,5 +5056,57 @@ button.mfp-close::after {
           transform: translate(-50%, -50%);
   width: 20px;
   height: 20px;
+}
+
+.vslider-slide {
+  background: #000;
+  overflow: hidden;
+  border-radius: 25px;
+}
+.vslider-slide img {
+  display: block;
+}
+
+#vslider {
+  margin-left: -50px;
+  margin-right: -50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  overflow: hidden;
+}
+#vslider .carousel-3d-container {
+  overflow: visible;
+}
+#vslider .carousel-3d-slide {
+  background-color: transparent;
+}
+
+@media (max-width: 1024px) {
+  .tour-slider {
+    margin-right: -40px;
+    padding-right: 40px;
+  }
+  .tour-slider .swiper-slide {
+    width: 340px;
+    max-width: calc(100vw - 40px);
+  }
+}
+@media (max-width: 992px) {
+  .tour-slider {
+    margin-right: -35px;
+    padding-right: 35px;
+  }
+}
+@media (max-width: 576px) {
+  .tour-slider {
+    margin-right: -30px;
+    padding-right: 30px;
+  }
+}
+@media (max-width: 420px) {
+  .tour-slider {
+    margin-right: -20px;
+    padding-right: 20px;
+  }
 }
 /*# sourceMappingURL=sourcemaps/style.css.map */

@@ -1,86 +1,36 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const FARBA = {
-    WH: window.innerHeight,
-  
-    WW: document.documentElement.clientWidth,
-  
-    isTouch: 'ontouchstart' in window || navigator.msMaxTouchPoints,
-  
-    //lazy load для сторонних либ
-    lazyLibraryLoad(scriptSrc, linkHref, callback) {
-      let script;
-      const domScript = document.querySelector(`script[src="${scriptSrc}"]`);
-      const domLink = document.querySelector(`link[href="${linkHref}"]`);
-  
-      if (!domScript) {
-        script = document.createElement("script");
-        script.src = scriptSrc;
-        document.querySelector("#wrapper").after(script);
-      }
-  
-      if (linkHref !== "" && !domLink) {
-        let style = document.createElement("link");
-        style.href = linkHref;
-        style.rel = "stylesheet";
-        document.querySelector("link").before(style);
-      }
-  
-      if (!domScript) {
-        script.onload = callback;
-      } else {
-        domScript.onload = callback;
-      }
+const FARBA = {
+  //lazy load для сторонних либ
+  lazyLibraryLoad(scriptSrc, linkHref, callback) {
+    let script;
+    const domScript = document.querySelector(`script[src="${scriptSrc}"]`);
+    const domLink = document.querySelector(`link[href="${linkHref}"]`);
+
+    if (!domScript) {
+      script = document.createElement("script");
+      script.src = scriptSrc;
+      document.querySelector("#wrapper").after(script);
     }
-  };
-  
-  (function() {
-    if (!document.querySelector('.main-slider')) return
-  
-    var swiper = new Swiper('.main-slider', {
-      effect: 'cards',
-      grabCursor: true,
-      initialSlide: 1,
-      slidesPerView: 'auto',
-      centeredSlides: false,     
-      spaceBetween: 200,
-      threshold: 10,
-      loop: true,      
-      loopedSlides: 2,
-      // autoplay: {
-      //   delay: 4500,
-      //   disableOnInteraction: false,
-      // },
-      cardsEffect: {
-        rotate: 0,
-        slideShadows: true,       
-        stretch: 60,
-      },
-      pagination: {
-        el: ".section-slider .swiper-pagination",
-        clickable: true
-      },
-      
-      
-        // effect: "coverflow",
-        // grabCursor: true,
-        // centeredSlides: true,        
-        // speed: 1200,
-        // // initialSlide: 1,
-        // slidesPerView: 'auto',
-        // loop: true,
-        // coverflowEffect: {
-        //   rotate: 0,
-        //   stretch: 0,
-        //   depth: 200,
-        //   modifier: 1,
-        //   slideShadows: false,
-        // },
-        // pagination: {
-        //   el: ".section-slider .swiper-pagination",
-        //   clickable: true
-        // }
-    });        
-  })();
+
+    if (linkHref !== "" && !domLink) {
+      let style = document.createElement("link");
+      style.href = linkHref;
+      style.rel = "stylesheet";
+      document.querySelector("link").before(style);
+    }
+
+    if (!domScript) {
+      script.onload = callback;
+    } else {
+      domScript.onload = callback;
+    }
+  }
+};
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  $.validator.addMethod("noDigits", function(value, element) {
+    return this.optional(element) || !/\d/.test(value); 
+  });
   
   (function() {
     if (!document.querySelector('.destinations-slider')) return
@@ -126,8 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
     var swiper = new Swiper('.tour-slider', {   
       grabCursor: true,    
-      slidesPerView: 1,
-      slidesPerGroup: 1,
+      slidesPerView: 'auto',
+      // slidesPerGroup: 1,
       spaceBetween: 12,
       autoplay: false,
       // loop: true,     
@@ -141,11 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       breakpoints: {             
         576: {
-          slidesPerView: 2,   
+          // slidesPerView: 2,   
           spaceBetween: 14,   
         },
         960: {
-          slidesPerView: 2,        
+          // slidesPerView: 2,       
           spaceBetween: 18,   
         },      
         1024: {
@@ -318,25 +268,17 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   // открытие подменю mobile
-  (function() {
-    const items = document.querySelectorAll('.mobile-nav li');   
-
-    items.forEach(el => {      
-      el.addEventListener('click', () => {        
-        el.classList.toggle('opened');
-      })
+  document.querySelectorAll('.mobile-nav li').forEach(el => {      
+    el.addEventListener('click', () => {        
+      el.classList.toggle('opened');
     })
-  })();
+  });
 
-  (function() {
-    const items = document.querySelectorAll('.footer-nav li');   
-
-    items.forEach(el => {      
-      el.addEventListener('click', () => {        
-        el.classList.toggle('opened');
-      })
+  document.querySelectorAll('.footer-nav li').forEach(el => {      
+    el.addEventListener('click', () => {        
+      el.classList.toggle('opened');
     })
-  })();
+  });
 
   // обертка для таблицы
   (function(){
@@ -353,29 +295,43 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })();
 
-  // new Vue({
-  //   el: '#app',    
-  //   components: {
-  //     'carousel-3d': window['carousel-3d'].Carousel3d,
-  //     'slide': window['carousel-3d'].Slide
-  //   }    
-  // })
+  const buildVueSlider = (selector) => {
+    if (!document.querySelector(selector)) return null
 
+    return new Vue({
+      el: selector,
+      data: {
+        width: window.matchMedia("(min-width: 769px)").matches ? 1420 : 720,
+        height: window.matchMedia("(min-width: 769px)").matches ? 560 : 965
+      },
+      components: {
+        'carousel-3d': window['carousel-3d'].Carousel3d,
+        'slide': window['carousel-3d'].Slide
+      },
+      mounted () {
+        const mobileWidthMediaQuery = window.matchMedia('(max-width: 769px)')
   
-  // (function () {
-  //   if (!document.querySelector('.header-nav ul li:nth-child(1) a') || !document.querySelector('.appointment')) return
+        const mediaSizeHandler = (isMobileSize) => {
+          if (!isMobileSize) {
+            this.width = 1420;
+            this.height = 560;
+            this.$refs.carousel.setSize();
+          } else {
+            this.width = 720;
+            this.height = 965;
+            this.$refs.carousel.setSize();
+          }
+        }
   
+        mediaSizeHandler(mobileWidthMediaQuery.matches)
   
-  //   document.querySelector('.header-nav ul li:nth-child(1) a').addEventListener('click', (e) => {
-  //     e.preventDefault()   
+        mobileWidthMediaQuery.addEventListener('change', (event) => {
+          mediaSizeHandler(event.matches)
+        })
+      }   
+    })
+  }
+  const slider = buildVueSlider('#vslider')
   
-  //     if (window.innerWidth <= 1280) {
-  //       toggleBurgerMenu();
-  //     } else {
-  //       document.body.style.overflow = '';
-  //     }   
-  
-  //     document.querySelector('.appointment').scrollIntoView({behavior: "smooth"})
-  //   })
-  // })();
+
 });
