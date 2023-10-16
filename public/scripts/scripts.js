@@ -268,17 +268,15 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   // открытие подменю mobile
-  document.querySelectorAll('.mobile-nav li .icon').forEach(el => {
-    el.addEventListener('click', () => {
-      el.parentNode.classList.toggle('opened');
-    })
-  });
+  (function() {
+    if(!document.querySelector('.mobile-nav li .icon') || !document.querySelector('.footer-nav li .icon')) return
 
-  document.querySelectorAll('.footer-nav li .icon').forEach(el => {      
-    el.addEventListener('click', () => {        
-      el.parentNode.classList.toggle('opened');
-    })
-  });
+    document.querySelectorAll('.mobile-nav li .icon, .footer-nav li .icon').forEach(el => {
+      el.addEventListener('click', () => {
+        el.parentNode.classList.toggle('opened');
+      })
+    });
+  })();
 
   // обертка для таблицы
   (function(){

@@ -1051,6 +1051,10 @@
     left: 200px;
     bottom: 0;
     transform: translateY(50%);
+
+    @media (max-width: 480px) {
+      display: none;
+    }
   }
   
 }
@@ -1973,21 +1977,34 @@ button.mfp-close {
           }
         }
   
-        &:hover {
-          & > a {
-            color: $primary;
-            @media (max-width: 960px) {              
-              color: $font;
-            }
-          }
+        // &:hover {
+        //   & > a {
+        //     color: $primary;
+        //     @media (max-width: 960px) {              
+        //       color: $font;
+        //     }
+        //   }
   
-          & > .icon {         
-            transform: rotate(0deg);       
-            stroke: $primary;
+        //   & > .icon {         
+        //     transform: rotate(0deg);       
+        //     stroke: $primary;
 
-            @media (max-width: 960px) {
-              transform: rotate(180deg);
-              stroke: $font;
+        //     @media (max-width: 960px) {
+        //       transform: rotate(180deg);              
+        //       stroke: $font;
+        //     }
+        //   }
+        // }
+
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            & > a {
+              color: $primary;
+            }
+        
+            & > .icon {         
+              transform: rotate(0deg);       
+              stroke: $primary;
             }
           }
         }
